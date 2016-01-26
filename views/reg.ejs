@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+<meta charset="utf-8">
+<meta name="author" content="cowkeys">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><%= title %> | Blog</title>
+
+<!-- main JS libs -->
+<script src="/javascripts/modernizr.min.js"></script>
+<script src="/javascripts/jquery-1.10.0.js"></script>
+<script src="/javascripts/jquery-ui.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+
+<!-- Style CSS -->
+<link href="/stylesheets/bootstrap.css" media="screen" rel="stylesheet">
+<link href="/stylesheets/style.css" media="screen" rel="stylesheet">
+
+<!-- scripts -->
+<script src="/javascripts/general.js"></script>
+</head>
+  <body>
+    <div class="container">
+
+        <!-- content -->
+        <div class="content " role="main">
+          <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+                  <h6 class="foo">reg</h6>
+
+                  <!-- login widget -->
+                  <div class="widget-container widget_login styled boxed boxed-cream">
+                      <div class="inner">
+                          <form action="index" method="post" class="loginform">
+                              <div class="field_text">
+                                  <label for="user_name" class="label_title">Username</label>
+                                  <input type="text" name="user" id="user_name" value="" placeholder="Username" />
+                                  <span class="input_icon input_email"></span>
+                              </div>
+                              <div class="field_text">
+                                  <label for="user_email" class="label_title">Email</label>
+                                  <input type="text" name="email" id="user_email" value="" placeholder="Email" />
+                                  <span class="input_icon input_email"></span>
+                              </div>
+
+                              <div class="field_text">
+                                  <label for="user_pass" class="label_title">Password</label>
+                                  <input type="password" name="pwd" id="user_pass" value="" placeholder="Password" />
+                                  <span class="input_icon input_pass"></span>
+                              </div>
+
+                              <div class="rowSubmit">
+
+                                  <span class="btn btn-hover"><input type="submit"  name="reg-submit" id="reg-submit" value="注册" /></span>
+                                  <a href="/homepage" class="btn btn-hover"><span>注册</span></a>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <!--/ login widget -->
+              </div>
+                  <!--/ login widget -->
+              </div>
+</div>
+  </body>
+</html>
