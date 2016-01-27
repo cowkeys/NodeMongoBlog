@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 
 var db = require('../database/db.js');
-
+var moment = require('moment');
 router.get('/', function(req, res) {
   res.render('index', { title: 'get' });//**render的作用是调用模板引擎
 });
@@ -72,8 +72,26 @@ var query = {name:'cowkeys'};
         res.send(error);
     }else{
     //  res.render(result);//**render的作用是调用模板引擎
-        res.render('test', { menulist: result});//**render的作用是调用模板引擎
-        //res.send(result);
+        res.render('test', { menulist: result,moment:moment});//**render的作用是调用模板引擎
+    //  var a = moment("2016-01-27").("YYYY-MM-DD")
+      //  res.send(a);
+    }
+});
+});
+
+router.get('/test/:id',function(req, res) {
+//res.render('test',{title:'test'});\
+//res.send(req.params.id);
+var query = {_id:req.params.id};
+ db.blog.find(query,function(error, result){
+    if (error) {
+        res.send(error);
+    }else{
+    //  res.render(result);//**render的作用是调用模板引擎
+      //  res.jsonp(result);//**render的作用是调用模板引擎
+    //  var a = moment("2016-01-27").("YYYY-MM-DD");
+    console.log(result);
+        res.send(result);
     }
 });
 });

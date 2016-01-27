@@ -10,23 +10,43 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/default.css">
 	<link rel="stylesheet" href="/stylesheets/bamboo/bamboo.css">
+	<script src="moment.js"></script>
 	<!--[if IE]>
 		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
 	<![endif]-->
+	<script>
+
+	</script>
 </head>
 <body>
 	<div id="console">test</div>
 
 	<nav id="main-nav" class="navigation overflow">
 
-
-			<% for(var i=0; i<menulist.length; i++){%>
 <ul>
+	<li>
+		<table>
+			<tr>
+				<td><img style="border-radius:20px" src="images/1.jpg" height="100px" width="100px" /></td>
+				<td style="vertical-align: middle"><span ><font>如你弹着吉他 就以为自己是约翰列侬</font></span></td>
+			</tr>
+		</table>
 
-		<li><a><%=menulist[i].date%></a></li>
-</ul>
+
+	</li>
+			<% for(var i=0; i<menulist.length; i++){%>
+
+
+		<li>
+			<a  href="javascript:void(0)" onclick="viewdiary('<%= menulist[i].id%>')" >
+			<%= menulist[i].title%><span style=" float:right"><%=moment(menulist[i].date).format("YYYY-MM-DD")%></span>
+		</a>
+
+
+	</li>
+
 <%}%>
-
+</ul>
 		</ul>
 	</nav>
 
@@ -34,7 +54,7 @@
 
 		<header class="primary">
 			<span class="open icon">&#9776;</span>
-			<hgroup><h1>标题</h1></hgroup>
+			<hgroup><h1 id="id_title">标题</h1></hgroup>
 		</header>
 		<section id="scroller" class="overflow">
 			<div id="content">
@@ -42,23 +62,7 @@
 				<!-- Content goes in here -->
 
 
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostru </p>
 				<%-menulist[5].content%>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-
-				<p>Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
-
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
-				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
 
 				<!-- Content ends -->
 				</div>
@@ -69,11 +73,35 @@
 	</div>
 
 
-	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/javascripts/jquery.min.js"></script>
 	<script src="/javascripts/bamboo/bamboo.0.1.js"></script>
+
 
 	<script>
 		var site = new Bamboo();
+var ressss ;
+		function viewdiary(id){
+			alert(id);
+			$.ajax({
+						 type: "get",
+             //async: false,
+						 url: "/test/:id"+id,
+
+//	             data: {email:$("#email").val(), password:$("#password").val()},
+//			 data: {"password":"McLaughlin","email":"aaaa"},
+						 //dataType: "json",
+						 success: function(data){
+					   if(data){
+//ressss=data;
+											 alert(data[0]._id);
+									 } else{
+											//	alert('失败');
+									 }
+											}
+				 });
+//alert(ressss.name);
+		}
+
 	</script>
 </body>
 </html>

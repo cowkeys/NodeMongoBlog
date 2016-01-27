@@ -25,7 +25,7 @@
 		.navigation ul li a:hover ,
 		.navigation ul li a:visited ,
 		.navigation ul li a:focus { text-decoration: none; color: #cbc4c5; background-color: transparent; display: block; padding: 4px 14px 4px 14px; line-height: 40px }
-		
+
 	/*	Presentation styles
 	=========================== */
 	#content { padding: 5px 20px; }
@@ -47,6 +47,6 @@
 
 	/*	Navigation
 	=========================== */
-	.navigation { max-width: 265px }
+	.navigation { max-width: 300px }
 
 }
