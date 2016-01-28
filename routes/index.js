@@ -49,8 +49,8 @@ router.get('/u/:user',function(req, res) {
 router.post('/post',function(req, res) {
 
 });
-router.get('/reg',function(req, res) {
-  res.render('reg', { title: 'reg' });//**render的作用是调用模板引擎
+router.get('/indexjq',function(req, res) {
+  res.render('indexjq', { title: 'reg' });//**render的作用是调用模板引擎
 });
 router.post('/reg',function(req, res) {
 res.render('index0', { title: 'homepage' });//**render的作用是调用模板引擎
@@ -80,18 +80,14 @@ var query = {name:'cowkeys'};
 });
 
 router.get('/test/:id',function(req, res) {
-//res.render('test',{title:'test'});\
-//res.send(req.params.id);
 var query = {_id:req.params.id};
- db.blog.find(query,function(error, result){
+ db.blog.findOne(query,function(error, result){
     if (error) {
         res.send(error);
     }else{
-    //  res.render(result);//**render的作用是调用模板引擎
-      //  res.jsonp(result);//**render的作用是调用模板引擎
-    //  var a = moment("2016-01-27").("YYYY-MM-DD");
+      //  res.jsonp(result);
     console.log(result);
-        res.send(result);
+        res.json(result);//
     }
 });
 });

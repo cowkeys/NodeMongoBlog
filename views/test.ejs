@@ -10,11 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/default.css">
 	<link rel="stylesheet" href="/stylesheets/bamboo/bamboo.css">
-	<script src="moment.js"></script>
-	<!--[if IE]>
-		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
-	<![endif]-->
-	<script>
+
 
 	</script>
 </head>
@@ -54,17 +50,17 @@
 
 		<header class="primary">
 			<span class="open icon">&#9776;</span>
-			<hgroup><h1 id="id_title">标题</h1></hgroup>
+			<hgroup><h1><span id="blog_title"></span></h1></hgroup>
 		</header>
 		<section id="scroller" class="overflow">
 			<div id="content">
-				<header><h1>2015-05-19</h1></header>
+				<header><h1><span id="blog_date"></span></h1></header>
 				<!-- Content goes in here -->
-
-
-				<%-menulist[5].content%>
-
-				<!-- Content ends -->
+				<span id="blog_content"></span>
+				
+<div style=" padding:10px; text-align:center">
+<img style=" width: 100%; max-width: 600px; "  src="images/1.jpg">
+		</div>		<!-- Content ends -->
 				</div>
 
 		</section>
@@ -72,28 +68,27 @@
 
 	</div>
 
-
+ <script src="/javascripts/moment.js"></script>
 	<script src="/javascripts/jquery.min.js"></script>
 	<script src="/javascripts/bamboo/bamboo.0.1.js"></script>
 
 
 	<script>
 		var site = new Bamboo();
-var ressss ;
+
 		function viewdiary(id){
-			alert(id);
 			$.ajax({
 						 type: "get",
              //async: false,
-						 url: "/test/:id"+id,
-
-//	             data: {email:$("#email").val(), password:$("#password").val()},
-//			 data: {"password":"McLaughlin","email":"aaaa"},
-						 //dataType: "json",
+						 url: "/test/"+id,
+						 dataType: "json",
 						 success: function(data){
 					   if(data){
-//ressss=data;
-											 alert(data[0]._id);
+										//	 alert(data.name);//
+											 //$("#id_span").text(data.name);
+											 $("#blog_title").html(data.title);
+											 $("#blog_date").html(moment(data.date).format("YYYY-MM-DD hh:mm"));
+											 $("#blog_content").html(data.content);
 									 } else{
 											//	alert('失败');
 									 }
