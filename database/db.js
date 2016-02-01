@@ -17,7 +17,8 @@ var blogsScheMa = new Schema({
   content:String,
   title:String,
   date:Date,
-  state:Boolean
+  state:Boolean,
+  tag:String
 
 });
 

@@ -52,9 +52,7 @@ router.post('/post',function(req, res) {
 router.get('/indexjq',function(req, res) {
   res.render('indexjq0', { title: 'reg' });//**render的作用是调用模板引擎
 });
-router.get('/admin/article',function(req, res) {
-  res.render('admin/article', { title: 'reg' });//**render的作用是调用模板引擎
-});
+
 router.post('/reg',function(req, res) {
 res.render('index0', { title: 'homepage' });//**render的作用是调用模板引擎
 });
@@ -69,7 +67,7 @@ router.post('/login',function(req, res) {
 });
 router.get('/test',function(req, res) {
 //res.render('test',{title:'test'});\
-var query = {name:'cowkeys'};
+var query = {name:'Cowkeys'};
  db.blog.find(query,function(error, result){
     if (error) {
         res.send(error);

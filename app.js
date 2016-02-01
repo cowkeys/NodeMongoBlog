@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var moment = require('moment');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var admins = require('./routes/admins');
 var partials = require('express-partials');
 
 
@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/index', routes);
+app.use('/admin', admins);
 app.use('/users', users);
 
 
