@@ -8,7 +8,17 @@ var router = express.Router();
 var db = require('../database/db.js');
 var moment = require('moment');
 router.get('/', function(req, res) {
-  res.render('index', { title: 'get' });//**render的作用是调用模板引擎
+  var query = {name:'Cowkeys'};
+   db.blog.find(query,function(error, result){
+      if (error) {
+          res.send(error);
+      }else{
+      //  res.render(result);//**render的作用是调用模板引擎
+          res.render('bloglist', { menulist: result,moment:moment});//**render的作用是调用模板引擎
+      //  var a = moment("2016-01-27").("YYYY-MM-DD")
+        //  res.send(a);
+      }
+  });
 });
 
 router.post('/index', function(req, res) {
@@ -65,7 +75,7 @@ router.post('/login',function(req, res) {
 
 
 });
-router.get('/test',function(req, res) {
+router.get('/bloglist',function(req, res) {
 //res.render('test',{title:'test'});\
 var query = {name:'Cowkeys'};
  db.blog.find(query,function(error, result){
@@ -73,22 +83,32 @@ var query = {name:'Cowkeys'};
         res.send(error);
     }else{
     //  res.render(result);//**render的作用是调用模板引擎
-        res.render('test', { menulist: result,moment:moment});//**render的作用是调用模板引擎
+        res.render('bloglist', { menulist: result,moment:moment});//**render的作用是调用模板引擎
     //  var a = moment("2016-01-27").("YYYY-MM-DD")
       //  res.send(a);
     }
 });
 });
 
-router.get('/test/:id',function(req, res) {
+router.get('/blog/:id',function(req, res) {
+  console.log(req.params.id);
 var query = {_id:req.params.id};
- db.blog.findOne(query,function(error, result){
-    if (error) {
-        res.send(error);
+ db.blog.findOne(query,function(err, resone){
+    if (err) {
+        res.send(err);
     }else{
-      //  res.jsonp(result);
-    console.log(result);
-        res.json(result);//
+      var query = {name:'Cowkeys'};
+       db.blog.find(query,function(error, result){
+          if (error) {
+              res.send(error);
+          }else{
+          //  res.render(result);//**render的作用是调用模板引擎
+              res.render('blog', { menulist: result,con:resone,moment:moment});//**render的作用是调用模板引擎
+          //  var a = moment("2016-01-27").("YYYY-MM-DD")
+            //  res.send(a);
+          }
+      });
+
     }
 });
 });

@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>cowkeys</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/default.css">
+	<link rel="stylesheet" href="/stylesheets/bamboo/bamboo.css">
+	<style type="text/css">
+			#gallery-wrapper {
+			position: relative;
+			max-width: 75%;
+			width: 75%;
+			margin:50px auto;
+			}
+			img.thumb {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			}
+			.white-panel {
+			position: absolute;
+			background: white;
+			border-radius: 5px;
+			box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+			padding: 10px;
+			}
+			.white-panel h1 {
+			font-size: 1em;
+			}
+			.white-panel h1 a {
+			color: #A92733;
+			}
+			.white-panel:hover {
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+			margin-top: -5px;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+			}
+		</style>
+</head>
+<body>
+	<div id="console">test</div>
+	<nav id="main-nav" class="navigation overflow">
+<ul>
+	<li>
+		<table>
+			<tr>
+				<td><img style="border-radius:20px" src="images/cowkeys.jpg" height="100px" width="100px" /></td>
+				<td style="vertical-align: middle"><span ><font>如你弹着吉他 就以为自己是约翰列侬</font></span></td>
+			</tr>
+		</table>
+	</li>
+			<% for(var i=0; i<menulist.length; i++){%>
+		<li>
+			<a  href="javascript:void(0);" onclick="viewdiary('<%= menulist[i].id%>')" >
+			<%= menulist[i].title%><span style=" float:right"><%=moment(menulist[i].date).format("YYYY-MM-DD")%></span>
+		</a>
+	</li>
+			<%}%>
+</ul>
+		</ul>
+	</nav>
+	<div id="container">
+				<header class="primary">
+					<span class="open icon">&#9776;</span>
+					<hgroup><h1><span id="blog_title"></span></h1></hgroup>
+				</header>
+				<section id="scroller" class="overflow">
+					<section id="gallery-wrapper">
+						<% for(var i=menulist.length-1; i>=0; i--){%>
+							<article class="white-panel">
+								<img src="images/listimg/1.jpg" class="thumb">
+								<h1 style="padding:0px;margin:0"><a href="blog/<%= menulist[i].id%>" ><%=menulist[i].title%></a><label style="border-radius:10px;font-size:15px;width:100%; height:5px; background-color:#FFE4B5"> <%=menulist[i].tag%>
+								</label></h1>
+									<p style="padding:5px; margin:0"><%=menulist[i].content.substring(0,30)%></p>
+							</article>
+							<%}%>
+    </section>
+				</section>
+	</div>
+  <script src="/javascripts/moment.js"></script>
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bamboo/bamboo.0.1.js"></script>
+	<script src="/javascripts/pinterest_grid.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#gallery-wrapper").pinterest_grid({
+				no_columns: 4,
+                padding_x: 10,
+                padding_y: 10,
+                margin_bottom: 50,
+                single_column_breakpoint: 700
+			});
+
+		});
+	</script>
+	<script>
+		var site = new Bamboo();
+
+		function linktoBlog(id){
+			$.ajax({
+						 type: "get",
+             //async: false,
+						 url: "/test/"+id
+
+
+				 });
+//alert(ressss.name);
+		}
+
+	</script>
+
+
+</body>
+</html>

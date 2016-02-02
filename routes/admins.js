@@ -27,7 +27,7 @@ router.post('/article',function(req, res) {
           console.log(error);
       } else {
           console.log('saved OK!');
-          res.redirect('../test');
+          res.redirect('../bloglist');
       }
       // 关闭数据库链接
       //db.close();
