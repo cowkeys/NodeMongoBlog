@@ -1,5 +1,5 @@
 {
-  "name": "microblog",
+  "name": "NodeMongoBlog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
