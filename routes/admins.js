@@ -18,7 +18,8 @@ router.post('/article',function(req, res) {
   var tag = req.body.n_tag;
   var content = req.body.n_ha;
   var time = moment().format("YYYY-MM-DD hh:mm:ss");
-  var doc = {type:"article",name:"Cowkeys",  content : content,title : title,date :time,state:1,tag : tag};
+  var pho = req.body.a_pho;
+  var doc = {type:"article",name:"rick",  content : content,title : title,date :time,state:1,tag : tag,photo:pho};
 
   var blogEntity = new db.blog(doc);
 

@@ -12,6 +12,7 @@
 	=========================== */
 	header.primary { height: 49px; color: #333; background-color: #dadada; position: relative; border-bottom: solid 1px #f8f8f8; border-radius: 3px 3px 0 0;}
 	header.primary .icon { z-index: 22; position: absolute; top: 0; left: 0; height: 49px; width: 49px; font-size: 26px; line-height: 49px; text-align: center; color: #333; cursor: pointer;}
+	header.primary .iconh { z-index: 22; position: absolute; top: 0; right: 0; height: 49px; width: 49px; font-size: 26px; line-height: 49px; text-align: center; color: #333; cursor: pointer;}
 	header.primary .side { left: auto; right: 0; }
 	header.primary hgroup { text-align: center }
 	header.primary hgroup h1 { z-index: 20; position: absolute; top: 0; left: 50px; right: 50px; color:#333; margin: 0; line-height: 49px; margin: 0; font-size: 20px; }
@@ -42,6 +43,7 @@
 	=========================== */
 	header.primary { height: auto; background: transparent; border: none }
 	header.primary .icon { display: none }
+	header.primary .iconh { display: none }
 	header.primary hgroup { text-align: left; padding: 20px 20px 5px 20px }
 	header.primary hgroup h1 { position: relative; left: 0; right: auto; font-size: 30px; line-height: 34px; text-align: center;}
 

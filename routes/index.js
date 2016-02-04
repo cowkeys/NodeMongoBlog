@@ -8,7 +8,7 @@ var router = express.Router();
 var db = require('../database/db.js');
 var moment = require('moment');
 router.get('/', function(req, res) {
-  var query = {name:'Cowkeys'};
+  var query = {name:'rick'};
    db.blog.find(query,function(error, result){
       if (error) {
           res.send(error);
@@ -77,12 +77,13 @@ router.post('/login',function(req, res) {
 });
 router.get('/bloglist',function(req, res) {
 //res.render('test',{title:'test'});\
-var query = {name:'Cowkeys'};
+var query = {name:'rick'};
  db.blog.find(query,function(error, result){
     if (error) {
         res.send(error);
     }else{
     //  res.render(result);//**render的作用是调用模板引擎
+
         res.render('bloglist', { menulist: result,moment:moment});//**render的作用是调用模板引擎
     //  var a = moment("2016-01-27").("YYYY-MM-DD")
       //  res.send(a);
@@ -97,7 +98,7 @@ var query = {_id:req.params.id};
     if (err) {
         res.send(err);
     }else{
-      var query = {name:'Cowkeys'};
+      var query = {name:'rick'};
        db.blog.find(query,function(error, result){
           if (error) {
               res.send(error);

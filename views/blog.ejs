@@ -47,15 +47,15 @@
 	</nav>
 
 	<div id="container">
-
 		<header class="primary">
 			<span class="open icon">&#9776;</span>
 			<hgroup><h1><span id="blog_title"><%=con.title%></span></h1></hgroup>
+			<a href="/" /><img  class="iconh" src="../images/setting/back.png" style=" padding:5px" /></a>
 		</header>
 		<section id="scroller" class="overflow">
 			<div id="content">
 				<header><h1><span id="blog_date"><%=moment(con.date).format("YYYY-MM-DD HH:mm")%></span></h1>
-					<p><strong><%=con.tag%></strong></p>
+					<p><label style="border-radius:10px;background-color:#FFE4B5"><%=con.tag%><label></p>
 				</header>
 
 				<span id="blog_content"><%-con.content%></span>
