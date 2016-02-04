@@ -30,18 +30,20 @@
 
 
 	</li>
-			<% for(var i=0; i<menulist.length; i++){%>
-
-
-		<li>
-			<a  href="javascript:void(0)" onclick="viewdiary('<%= menulist[i].id%>')" >
-			<%= menulist[i].title%><span style=" float:right"><%=moment(menulist[i].date).format("YYYY-MM-DD")%></span>
-		</a>
-
-
+	<li style=" text-align:center;">
+		<img  title="wechat" src="http://7xqqe9.com1.z0.glb.clouddn.com/wechat.png" height="45px" width="45px" style=" cursor:pointer; margin-right:20px" />
+		<img src="http://7xqqe9.com1.z0.glb.clouddn.com/mail.png" height="50px" width="50px" title="email" style="cursor:pointer; margin-right:20px"/>
+		<img src="http://7xqqe9.com1.z0.glb.clouddn.com/msg.png" height="50px" width="50px" title="comment" style="cursor:pointer"/>
 	</li>
-
-<%}%>
+	<li style=" text-align:center;">
+		<a style=" cursor:pointer;"><strong>Blogs</strong></a>
+	</li >
+	<li style=" text-align:center;">
+		<a style=" cursor:pointer;"><strong>Moments</strong></a>
+	</li>
+	<li style=" text-align:center;">
+		<a style=" cursor:pointer;"><strong>Music</strong></a>
+	</li>
 </ul>
 
 	</nav>
