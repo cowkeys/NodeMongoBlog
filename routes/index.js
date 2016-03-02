@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/cv', function(req, res) {
-  res.render('cv');//**render的作用是调用模板引擎
+  res.render('cv',{moment:moment});//**render的作用是调用模板引擎
 });
 
 router.post('/index', function(req, res) {
