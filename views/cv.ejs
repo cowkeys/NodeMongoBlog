@@ -6,7 +6,7 @@
 	<meta name="msapplication-tap-highlight" content="no" />
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>cowkeys</title>
+	<title>cowkeys-cv</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bamboo/default.css">
 	<link rel="stylesheet" href="/stylesheets/bamboo/bamboo.css">
@@ -36,10 +36,10 @@
 		<img src="http://7xqqe9.com1.z0.glb.clouddn.com/msg.png" height="50px" width="50px" title="comment" style="cursor:pointer"/>
 	</li>
 	<li style=" text-align:center;">
-		<a style=" cursor:pointer;"><strong>Blogs</strong></a>
+		<a style=" cursor:pointer;" href="/"><strong>Blogs</strong></a>
 	</li >
 	<li style=" text-align:center;">
-		<a style=" cursor:pointer;"><strong>C V</strong></a>
+		<a style=" cursor:pointer;" href="/cv"><strong>C V</strong></a>
 	</li>
 	<li style=" text-align:center;">
 		<a style=" cursor:pointer;"><strong>Music</strong></a>
@@ -51,16 +51,18 @@
 	<div id="container">
 		<header class="primary">
 			<span class="open icon">&#9776;</span>
-			<hgroup><h1><span id="blog_title"><%=con.title%></span></h1></hgroup>
+			<hgroup><h1><span>Curriculum Vitae</span></h1></hgroup>
 			<a href="/" /><img  class="iconh" src="../images/setting/back.png" style=" padding:5px" /></a>
 		</header>
 		<section id="scroller" class="overflow">
-			<div id="content">
-				<header><h1><span id="blog_date"><%=moment(con.date).format("YYYY-MM-DD HH:mm")%></span></h1>
-					<p><label style="border-radius:10px;background-color:#FFE4B5"><%=con.tag%><label></p>
+			<div>
+				<header><h1><span><%=moment().format("YYYY-MM-DD")%></span></h1>
+					<p><label style="border-radius:10px;background-color:#FFE4B5">current location:Auckland<label></p>
 				</header>
 
-				<span id="blog_content"><%-con.content%></span>
+				<span>
+<img  class="iconh" src="http://7xqqe9.com1.z0.glb.clouddn.com/Resume.jpg" style=" padding:5px" />
+        </span>
 
 
 	</div>
@@ -75,31 +77,7 @@
 	<script src="/javascripts/bamboo/bamboo.0.1.js"></script>
 
 
-	<script>
-		var site = new Bamboo();
 
-		function viewdiary(id){
-			$.ajax({
-						 type: "get",
-             //async: false,
-						 url: "/blog/"+id,
-						 dataType: "json",
-						 success: function(data){
-					   if(data){
-										//	 alert(data.name);//
-											 //$("#id_span").text(data.name);
-											 $("#blog_title").html(data.title);
-											 $("#blog_date").html(moment(data.date).format("YYYY-MM-DD hh:mm"));
-											 $("#blog_content").html(data.content);
-									 } else{
-											//	alert('失败');
-									 }
-											}
-				 });
-//alert(ressss.name);
-		}
-
-	</script>
 
 
 </body>

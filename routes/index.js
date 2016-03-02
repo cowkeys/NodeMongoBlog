@@ -21,6 +21,10 @@ router.get('/', function(req, res) {
   });
 });
 
+router.get('/cv', function(req, res) {
+  res.render('cv');//**render的作用是调用模板引擎
+});
+
 router.post('/index', function(req, res) {
     var query = {name: req.body.log, password: req.body.pwd};
         db.user.count(query, function(err, doc){
@@ -72,9 +76,9 @@ router.get('/login',function(req, res) {
 router.post('/login',function(req, res) {
   res.render('homeview', { title: 'homepage' });//**render的作用是调用模板引擎
 //  var query = {user: req.body.user, password: req.body.password};
-
-
 });
+
+
 router.get('/bloglist',function(req, res) {
 //res.render('test',{title:'test'});\
 var query = {name:'rick'};
