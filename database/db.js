@@ -22,7 +22,7 @@ var blogsScheMa = new Schema({
   state:Boolean,
   tag:String,
   photo:String,
-  num:Int
+  num:Number
 
 });
 
