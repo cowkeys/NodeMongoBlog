@@ -97,8 +97,8 @@ var query = {name:'rick'};
 
 router.get('/blog/:id',function(req, res) {
 //  console.log(req.params.id);
-var query = {_id:req.params.id};
- db.blog.findOne(query,function(err, resone){
+var queryid = {_id:req.params.id};
+ db.blog.findOne(queryid,function(err, resone){
     if (err) {
         res.send(err);
     }else{
@@ -116,7 +116,7 @@ var query = {_id:req.params.id};
                          res.send(error);
                      }else{
                      //  res.render(result);//**render的作用是调用模板引擎
-                     db.blog.update(query,{"$inc":{"num" : 1}}, function(erup, resultup){
+                     db.blog.update(queryid,{"$inc":{"num" : 1}}, function(erup, resultup){
                                      if(erup)
                                      {
                                        console.log("inc wrong!");
