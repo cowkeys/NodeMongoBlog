@@ -96,23 +96,33 @@ var query = {name:'rick'};
 });
 
 router.get('/blog/:id',function(req, res) {
-  console.log(req.params.id);
+//  console.log(req.params.id);
 var query = {_id:req.params.id};
  db.blog.findOne(query,function(err, resone){
     if (err) {
         res.send(err);
     }else{
       var query = {name:'rick'};
-       db.blog.find(query,function(error, result){
-          if (error) {
-              res.send(error);
-          }else{
-          //  res.render(result);//**render的作用是调用模板引擎
-              res.render('blog', { menulist: result,con:resone,moment:moment});//**render的作用是调用模板引擎
-          //  var a = moment("2016-01-27").("YYYY-MM-DD")
-            //  res.send(a);
-          }
-      });
+      //db.blog.update(query,{"$inc":{"num" : 1}})
+      db.blog.update(query, {"$inc":{"num" : 1}}, function(erup, resultup){
+                      if(erup)
+                      {
+                        res.send(erup);
+                      }
+                      else {
+                        b.blog.find(query,function(error, result){
+                           if (error) {
+                               res.send(error);
+                           }else{
+                           //  res.render(result);//**render的作用是调用模板引擎
+                               res.render('blog', { menulist: result,con:resone,moment:moment});//**render的作用是调用模板引擎
+                           //  var a = moment("2016-01-27").("YYYY-MM-DD")
+                             //  res.send(a);
+                           }
+                       });
+                      }
+                   });
+       d
 
     }
 });

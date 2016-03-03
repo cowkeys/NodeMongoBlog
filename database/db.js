@@ -21,10 +21,20 @@ var blogsScheMa = new Schema({
   date:Date,
   state:Boolean,
   tag:String,
-  photo:String
+  photo:String,
+  num:Integer
 
+});
+
+var datanScheMa = new Schema({
+  date:Date,
+  total:String,
+  url:String,
+  Mac:String,
+  cm:String
 });
 
 exports.user = db.model('users', userScheMa); //  与users集合关联
 exports.blog = db.model('blogs',blogsScheMa);
+exports.datan = db.model('datans',datanScheMa);
 exports.db = db;
