@@ -104,12 +104,13 @@ var query = {_id:req.params.id};
     }else{
       var query = {name:'rick'};
       //db.blog.update(query,{"$inc":{"num" : 1}})
-      db.blog.update(query, {"$inc":{"num" : 1}}, function(erup, resultup){
-                      if(erup)
-                      {
-                        res.send(erup);
-                      }
-                      else {
+      //db.blog.update(query, {"$inc":{"num" : 1}}, function(erup, resultup){
+                      //if(erup)
+                    //  {
+                  //      res.send(erup);
+                //      }
+              //        else {    }
+            //           });
                         b.blog.find(query,function(error, result){
                            if (error) {
                                res.send(error);
@@ -120,8 +121,7 @@ var query = {_id:req.params.id};
                              //  res.send(a);
                            }
                        });
-                      }
-                   });
+
        d
 
     }
