@@ -122,7 +122,7 @@ var query = {_id:req.params.id};
                            }
                        });
 
-       d
+
 
     }
 });
