@@ -116,8 +116,15 @@ var query = {_id:req.params.id};
                          res.send(error);
                      }else{
                      //  res.render(result);//**render的作用是调用模板引擎
-                     db.blog.update(query,{"$inc":{"num" : 1}});
-                     res.render('blog', { menulist: result,con:resone,moment:moment});//**render的作用是调用模板引擎
+                     db.blog.update(query,{"$inc":{"num" : 1}}, function(erup, resultup){
+                                     if(erup)
+                                     {
+                                       console.log("inc wrong!");
+                                       res.send(erup);
+                                     }
+                                     else {  res.render('blog', { menulist: result,con:resone,moment:moment});  }
+                                      });
+                     //**render的作用是调用模板引擎
                      //  var a = moment("2016-01-27").("YYYY-MM-DD")
                        //  res.send(a);
                      }
