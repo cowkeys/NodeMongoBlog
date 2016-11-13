@@ -1,5 +1,5 @@
 # NodeMongoBlog
-第一次用NodeJs
+NodeJs
 
-NodeJs + Mongo 简单博客
+NodeJs + Mongo 博客
 http://cowkeys.me
